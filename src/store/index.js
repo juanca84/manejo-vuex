@@ -5,11 +5,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    msg: 'Vuex desde cero.'
   },
   mutations: {
   },
   actions: {
   },
   modules: {
+  },
+  getters: {
+
   }
 })
