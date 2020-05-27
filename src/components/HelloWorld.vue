@@ -23,6 +23,7 @@ export default {
     addAmigo(){
       this.$store.state.amigo = this.amigo;
       this.$store.dispatch('addAmigoAction');
+      this.amigo = '';
     }
   }
 
