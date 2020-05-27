@@ -2,12 +2,30 @@
   <div class="hello">
     <h1>{{ $store.getters.mensaje }}</h1>
     <h4>{{ $store.getters.nombreCompleto }}</h4>
+    <h2>Amigos</h2>
+    <input type="text" v-model="amigo">
+    <button @click="addAmigo">Agregar amigo</button>
+    <ul>
+      <li v-for="(amigo, index) in $store.state.amigos" :key="index">{{amigo}}</li>
+    </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld'
+  name: 'HelloWorld',
+  data(){
+    return{
+      amigo:''
+    }
+  },
+  methods: {
+    addAmigo(){
+      this.$store.state.amigo = this.amigo;
+      this.$store.dispatch('addAmigoAction');
+    }
+  }
+
 }
 </script>
 

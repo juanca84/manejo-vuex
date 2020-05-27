@@ -7,11 +7,19 @@ export default new Vuex.Store({
   state: {
     msg: 'Vuex desde cero desde un estado.',
     nombre: 'Juan Carlos',
-    apellido: 'Condori Machicado'
+    apellido: 'Condori Machicado',
+    amigos:[],
+    amigo: null 
   },
   mutations: {
+    addAmigo(state){
+      state.amigos = [state.amigo,...state.amigos]
+    }
   },
   actions: {
+    addAmigoAction(context) {
+      context.commit('addAmigo');
+    }
   },
   modules: {
   },
